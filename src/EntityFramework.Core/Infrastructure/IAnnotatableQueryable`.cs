@@ -3,12 +3,13 @@
 
 using System.Linq;
 using JetBrains.Annotations;
+using Microsoft.Data.Entity.Query;
 
 namespace Microsoft.Data.Entity.Infrastructure
 {
     public interface IAnnotatableQueryable<out TEntity>
         where TEntity : class
     {
-        IQueryable<TEntity> AnnotateQuery([NotNull] object annotation);
+        IQueryable<TEntity> AnnotateQuery([NotNull] QueryAnnotation annotation);
     }
 }
